@@ -1,0 +1,23 @@
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+   
+    
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" #name [(ngModel)]="hero.name" placeholder="Hero name"/>
+        <p>{{message}}</p>
+      </div>
+      <div>
+        <label for="hero-name">Super Power: </label>
+        <input id="hero-name" #power [(ngModel)]="hero.power" placeholder="Hero name"/>
+      </div>
+      <div>
+        <label for="hero-name">Weakness: </label>
+        <input id="hero-name" #weakness [(ngModel)]="hero.weakness" placeholder="Hero name"/>
+      </div>
+
+      <button (click)="update(name.value, power.value, weakness.value)">Update</button>
+      <button (click)="removeHero()">REMOVE HERO</button>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
